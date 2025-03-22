@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking Movie Details</title>
+<style> 
+.mydiv { 
+            text-decoration: bold;
+            text-align: left;
+            width: 1000px;
+            border: 1px solid purple;
+            text-align: center;
+            color:red;
+            background-color:#c7f15e;
+            font-family: Arial;
+            font-size: 20px;
+              }
+</style>
+</head>
+<body bgcolor="orange">
+<center>
+<br><br>
+<h1 style="color:blue;font-size: 50px;"><b>Theatre Mohan, Chirala</h1>
+<div class="mydiv">
+<h2><u>Your Ticket Details:</u> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: <input type="date">
+<br>
+<script>
+let ticket_price = 150; // ticket price 
+var seats=prompt("Enter the Number of Tickets");
+var totalcost = ticket_price * seats;
+document.write("<br>The Number of Seats Booked: " +seats);
+document.write("<br>Total Cost :Rs."+totalcost);
+for (let i = 1; i<=seats; i++) 
+{ 
+if (seats<=2)
+{ 
+document.write('<br>The cost per '+seats+ ' ticket(s) Rs: '+totalcost);
+break;
+}
+else if (seats >= 6)
+{
+document.write('<br>Booking is not allowed for 6 or more Tickets');
+break;
+}
+else if ( seats> 2 && seats <5)
+{
+ var discount = (totalcost *10)/100 
+document.write('<br>Tickets Count is >2 and <5, <br>Festival Season Discount 10%, Cost is : Rs. ' + (totalcost - discount)); 
+document.write('<br>For '+seats+' Tickets ,you need to pay: Rs. '+ (totalcost - discount) +' instead of Rs. '+totalcost);
+break;
+}
+}
+</script> 
+</div>
+</center>
+</body>
+</html>
+
